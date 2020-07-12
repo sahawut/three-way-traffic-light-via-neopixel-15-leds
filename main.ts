@@ -1,22 +1,23 @@
-function green () {
-    strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
-}
-input.onButtonPressed(Button.A, function () {
-    strip.clear()
-    red()
-    strip.show()
-    basic.pause(500)
-    strip.clear()
-    green()
-    strip.show()
-})
-input.onButtonPressed(Button.B, function () {
+radio.onReceivedNumber(function (receivedNumber) {
     strip.clear()
     yellow()
     strip.show()
     basic.pause(500)
     strip.clear()
     red()
+    strip.show()
+})
+function green () {
+    strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+}
+input.onButtonPressed(Button.A, function () {
+    radio.sendNumber(1)
+    strip.clear()
+    red()
+    strip.show()
+    basic.pause(500)
+    strip.clear()
+    green()
     strip.show()
 })
 function yellow () {
@@ -26,7 +27,8 @@ function red () {
     strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
 }
 let strip: neopixel.Strip = null
-strip = neopixel.create(DigitalPin.P1, 3, NeoPixelMode.RGB)
+radio.setGroup(1)
+strip = neopixel.create(DigitalPin.P1, 15, NeoPixelMode.RGB)
 strip.setBrightness(10)
 strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
 strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
