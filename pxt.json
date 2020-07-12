@@ -1,5 +1,5 @@
 {
-    "name": "Three Wayed Traffic Light Via Neopixel 15 LEDS",
+    "name": "Taffic Light With Radio & Neopixl",
     "description": "",
     "dependencies": {
         "core": "*",
