@@ -30,6 +30,8 @@ let strip: neopixel.Strip = null
 radio.setGroup(1)
 strip = neopixel.create(DigitalPin.P1, 15, NeoPixelMode.RGB)
 strip.setBrightness(10)
+strip.clear()
 strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
 strip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
 strip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+strip.show()
