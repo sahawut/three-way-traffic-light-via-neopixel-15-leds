@@ -26,6 +26,9 @@ input.onButtonPressed(Button.A, function () {
         strip.show()
     }
 })
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(light_level)
+})
 function yellow () {
     is_red = 0
     is_green = 0
@@ -37,10 +40,12 @@ function red () {
     strip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
 }
 let strip: neopixel.Strip = null
+let light_level = 0
 let is_red = 0
 let is_green = 0
 is_green = 1
 is_red = 1
+light_level = input.lightLevel()
 radio.setGroup(1)
 strip = neopixel.create(DigitalPin.P1, 15, NeoPixelMode.RGB)
 strip.setBrightness(10)
